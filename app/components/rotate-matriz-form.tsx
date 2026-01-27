@@ -13,7 +13,10 @@ export default function RotateMatrizForm({ setMatriz }: RotateMatrizFormProps) {
         formState: { errors, isValid },
     } = useForm<RotateMatrizFormValues>({
         resolver: zodResolver(rotateMatrizFormSchema),
-        mode: "onChange"
+        mode: "onChange",
+        defaultValues: {
+            matriz: '[[1, 2, 1, 1,5], [1, 4, 1, 1,5], [2, 1, 1, 1,5], [6, 1, 1, 1,5], [6, 1, 1, 1,5]]'
+        }
     })
 
     async function onSubmit(data: RotateMatrizFormValues) {

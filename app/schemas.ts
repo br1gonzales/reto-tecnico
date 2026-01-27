@@ -8,14 +8,14 @@ export const rotateMatrizFormSchema = z.object({
             if (matriz.length === 0 || unevenItem !== undefined) {
                 ctx.issues.push({
                     code: "custom",
-                    message: "Por favor, ingrese un listado bidimensional.",
+                    message: "Por favor, ingrese una matriz de NxN.",
                     input: ctx.value
                 });
             }
         } catch {
             ctx.issues.push({
                 code: "custom",
-                message: "Por favor, ingrese un listado bidimensional.",
+                message: "Por favor, ingrese una matriz de NxN.",
                 input: ctx.value
             });
         }

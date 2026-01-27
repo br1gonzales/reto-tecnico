@@ -17,7 +17,7 @@ export interface MatrizProps {
     className?: string
 }
 
-export interface InvalidMatrizMessageProps {
+export interface FieldErrorProps {
     message: string,
     className?: string
 }
@@ -25,10 +25,6 @@ export interface InvalidMatrizMessageProps {
 export interface HeadingProps {
     text: string,
     className?: string
-}
-
-export interface RotateMatrizArgs {
-    matriz: number[][]
 }
 
 export interface RotateMatrizFormProps {
