@@ -1,1 +1,2 @@
+export const defaultMatrizValue = '[[1, 2, 1, 1,5], [1, 4, 1, 1,5], [2, 1, 1, 1,5], [6, 1, 1, 1,5], [6, 1, 1, 1,5]]'
 export const initialMatriz = [[1, 2], [3, 4]]

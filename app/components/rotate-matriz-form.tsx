@@ -5,6 +5,7 @@ import { rotateMatrizFormSchema, RotateMatrizFormValues } from "../schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
 import TextInput from "./text-input"
 import { RotateMatrizFormProps } from "../types"
+import { defaultMatrizValue } from "../constants"
 
 export default function RotateMatrizForm({ setMatriz }: RotateMatrizFormProps) {
     const {
@@ -15,7 +16,7 @@ export default function RotateMatrizForm({ setMatriz }: RotateMatrizFormProps) {
         resolver: zodResolver(rotateMatrizFormSchema),
         mode: "onChange",
         defaultValues: {
-            matriz: '[[1, 2, 1, 1,5], [1, 4, 1, 1,5], [2, 1, 1, 1,5], [6, 1, 1, 1,5], [6, 1, 1, 1,5]]'
+            matriz: defaultMatrizValue
         }
     })
 
