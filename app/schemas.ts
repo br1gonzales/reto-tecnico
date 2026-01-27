@@ -5,7 +5,7 @@ export const rotateMatrizFormSchema = z.object({
         try {
             const matriz = JSON.parse(ctx.value)
             const unevenItem = matriz.find((array: number[]) => array.length !== matriz.length)
-            if (unevenItem !== undefined) {
+            if (matriz.length === 0 || unevenItem !== undefined) {
                 ctx.issues.push({
                     code: "custom",
                     message: "Por favor, ingrese un listado bidimensional.",
