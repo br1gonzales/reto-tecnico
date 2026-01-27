@@ -4,5 +4,5 @@ import Page from '../app/page'
 
 test('Page', () => {
     render(<Page />)
-    expect(screen.getByRole('label', { level: 1, name: 'matriz' })).toBeDefined()
+    expect(screen.getByText('Matriz')).toBeDefined()
 })
