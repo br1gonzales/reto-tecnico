@@ -2,12 +2,19 @@ import { z } from 'zod';
 
 export const rotateMatrizFormSchema = z.object({
     matriz: z.string().check(ctx => {
-        if (ctx.value.length < 4) {
+        try {
+            const matriz = JSON.parse(ctx.value)
+            const unevenItem = matriz.find((array: number[]) => array.length !== matriz.length)
+            if (unevenItem !== undefined) {
+                ctx.issues.push({
+                    code: "custom",
+                    message: "Por favor, ingrese un listado bidimensional.",
+                    input: ctx.value
+                });
+            }
+        } catch {
             ctx.issues.push({
-                code: "too_small",
-                minimum: 3,
-                origin: "string",
-                inclusive: true,
+                code: "custom",
                 message: "Por favor, ingrese un listado bidimensional.",
                 input: ctx.value
             });

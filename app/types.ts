@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react"
+import { Dispatch, SetStateAction } from "react"
 import { UseFormRegister } from "react-hook-form";
 import { RotateMatrizFormValues } from "./schemas";
 
@@ -11,13 +11,10 @@ export interface TextInputProps {
 }
 
 export interface MatrizProps {
+    rotate?: boolean,
     title: string,
     data: number[][],
     className?: string
-}
-
-export interface RotateFormProps {
-    setInput: ChangeEvent<Element>
 }
 
 export interface InvalidMatrizMessageProps {
@@ -28,4 +25,12 @@ export interface InvalidMatrizMessageProps {
 export interface HeadingProps {
     text: string,
     className?: string
+}
+
+export interface RotateMatrizArgs {
+    matriz: number[][]
+}
+
+export interface RotateMatrizFormProps {
+    setMatriz: Dispatch<SetStateAction<number[][]>>
 }

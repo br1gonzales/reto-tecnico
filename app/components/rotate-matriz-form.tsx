@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form"
 import { rotateMatrizFormSchema, RotateMatrizFormValues } from "../schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
 import TextInput from "./text-input"
+import { RotateMatrizFormProps } from "../types"
 
-export default function RotateMatrizForm() {
+export default function RotateMatrizForm({ setMatriz }: RotateMatrizFormProps) {
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors, isValid },
     } = useForm<RotateMatrizFormValues>({
         resolver: zodResolver(rotateMatrizFormSchema),
@@ -17,8 +17,8 @@ export default function RotateMatrizForm() {
     })
 
     async function onSubmit(data: RotateMatrizFormValues) {
-        console.log(data)
-        reset()
+        const parsedMatriz = JSON.parse(data.matriz)
+        setMatriz(parsedMatriz)
     }
 
     return (
