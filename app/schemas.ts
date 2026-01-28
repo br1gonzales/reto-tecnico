@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const rotateMatrizFormSchema = z.object({
+export const matrizFormSchema = z.object({
     matriz: z.string().check(ctx => {
         try {
             const matriz = JSON.parse(ctx.value)
@@ -22,4 +22,4 @@ export const rotateMatrizFormSchema = z.object({
     }),
 })
 
-export type RotateMatrizFormValues = z.infer<typeof rotateMatrizFormSchema>;
+export type MatrizFormValues = z.infer<typeof matrizFormSchema>;
