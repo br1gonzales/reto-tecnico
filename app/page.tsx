@@ -11,8 +11,8 @@ export default function HomePage() {
     <main className="p-[13px_20px]">
       <RotateMatrizForm setMatriz={setMatriz} />
       <section className="flex flex-col space-x-[40px] mt-[20px]">
-        <Matriz title="Input" data={matriz} className="mt-[16px]" />
-        <Matriz reverse={true} title="Output (rotado)" data={matriz} className="mt-[54px]" />
+        <Matriz title="Input:" data={matriz} className="mt-[16px]" />
+        <Matriz reverse={true} title="Output:" data={matriz} className="mt-[54px]" />
       </section>
     </main>
   )
