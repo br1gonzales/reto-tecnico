@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction } from "react"
 import { UseFormRegister } from "react-hook-form";
-import { RotateMatrizFormValues } from "./schemas";
+import { MatrizFormValues } from "./schemas";
 
 export interface TextInputProps {
     label: string,
     placeholder: string,
     name: string
-    register: UseFormRegister<RotateMatrizFormValues>,
+    register: UseFormRegister<MatrizFormValues>,
     error: string | undefined
 }
 
@@ -27,6 +27,6 @@ export interface HeadingProps {
     className?: string
 }
 
-export interface RotateMatrizFormProps {
+export interface MatrizFormProps {
     setMatriz: Dispatch<SetStateAction<number[][]>>
 }
