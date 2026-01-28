@@ -1,8 +1,8 @@
 import { MatrizProps } from "../types"
 import Heading from "./heading"
 
-export default function Matriz({ data, title, rotate, className }: MatrizProps) {
-    const matriz = rotate ? data : rotateMatriz(data)
+export default function Matriz({ data, title, reverse, className }: MatrizProps) {
+    const matriz = reverse ? reverseMatriz(data) : data
     return (
         <article className={`${className} mx-auto`}>
             <div>
@@ -25,8 +25,7 @@ export default function Matriz({ data, title, rotate, className }: MatrizProps) 
     )
 }
 
-function rotateMatriz(matriz: number[][]) {
-    return matriz[0].map((_, index) =>
-        matriz.map(row => row[index]).reverse()
-    );
+function reverseMatriz(matriz: number[][]) {
+    return matriz[0].map((_, index) => ((matriz.map(row => row[index])))
+    ).reverse()
 }

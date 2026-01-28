@@ -11,7 +11,7 @@ export interface TextInputProps {
 }
 
 export interface MatrizProps {
-    rotate?: boolean,
+    reverse?: boolean,
     title: string,
     data: number[][],
     className?: string
